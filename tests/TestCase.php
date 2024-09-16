@@ -31,7 +31,7 @@ abstract class TestCase extends Orchestra
     {
         //If we're not in travis, load our local .env file
         if (empty(getenv('CI'))) {
-            $dotenv = Dotenv::create(realpath(__DIR__.'/..'));
+            $dotenv = Dotenv::createImmutable(realpath(__DIR__.'/..'));
             $dotenv->load();
         }
 
